@@ -1,0 +1,139 @@
+html, body {
+  position: relative;
+  left: -4px;
+  width: calc(100vw + 4px);
+  overflow-x: hidden;
+}
+/* Main Container */
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100vh; /* Ensures full viewport height */
+  width: 100vw; /* Ensures full viewport width */
+  background-color: #FDEB87; /* Yellow background */
+  overflow: hidden;
+  padding-top: 15rem; /* Moves the hero section higher up */
+}
+
+/* Hero Section */
+.heroSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 800px;
+  width: 80%;
+  background: #456990;
+  color: white;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Creates space below hero section */
+.heroSection + .testimonialsSection {
+  margin-top: 10rem; /* Adds space between hero and testimonials */
+}
+
+.textContainer {
+  flex: 1;
+}
+
+.textContainer h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.textContainer p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #FDE872;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: #FFD700;
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.profilePic {
+  border-radius: 50%;
+  border: 5px solid white;
+}
+.flagIcon {
+  width: 30px;
+  height: auto;
+}
+
+/* Testimonials Section */
+.testimonialsSection {
+  width: 100%;
+  overflow: hidden;
+  background-color: #456990;
+  padding: 2rem 0;
+  position: relative;
+  white-space: nowrap;
+}
+
+.testimonialHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Space between name & flag */
+}
+
+/* Scrolling Container */
+.scrollingContainer {
+  display: flex;
+  width: 200%; /* Makes sure there's enough space for smooth looping */
+  animation: scrollLeft 30s linear infinite; /* Continuous smooth scrolling */
+}
+
+/* Each testimonial track contains double the testimonials */
+.testimonialTrack {
+  display: flex;
+  gap: 2rem;
+}
+
+.testimonialCard {
+  width: 300px; /* Fixed width for uniformity */
+  min-height: 180px; /* Ensures all cards have the same height */
+  background: #FDE872;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  word-wrap: break-word;
+  overflow: hidden;
+  white-space: normal; /* Allows text to wrap */
+}
+
+/* Smooth infinite scrolling */
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* Moves exactly half the duplicated content */
+  }
+}

@@ -1,0 +1,91 @@
+.navbar {
+  position: fixed; /* Keeps navbar visible while scrolling */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #456990;
+  padding: 1rem 0;
+  color: white;
+  z-index: 1000; /* Ensures it stays above other content */
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.navLinks li {
+  display: inline;
+}
+
+.navLinks a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.navLinks a:hover,
+.navLinks a.active {
+  background: #FDE872;
+  color: #000;.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #456990;
+    padding: 1rem 0;
+    color: white;
+    width: 100vw; /* Ensures full width */
+  }
+  
+  .navLinks {
+    display: flex;
+    justify-content: space-around; /* Distributes tabs evenly */
+    width: 100%; /* Makes the nav span the entire width */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #FDEB87; /* Background color spans full width */
+  }
+  
+  .navLinks li {
+    flex: 1; /* Makes each tab take up equal space */
+    text-align: center;
+  }
+  
+  .navLinks a {
+    display: block;
+    padding: 1rem 0;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+  }
+  
+  .navLinks a:hover,
+  .navLinks a.active {
+    background: #FDE872;
+    color: #000;
+  }
+}

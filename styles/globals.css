@@ -1,0 +1,21 @@
+#__next-prerender-indicator {
+  display: none !important;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding-right: 100;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#__next {
+  width: 100%;
+  overflow-x: hidden;
+}
