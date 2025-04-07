@@ -1,0 +1,244 @@
+/* Yellow Box Container (Similar to About Me) */
+.yellowBoxContainer {
+  background-color: rgb(254, 242, 173); /* FDEB87 with 29% opacity */
+  max-width: 800px;
+  width: 90%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 20px;
+  border-radius: 30px;
+  margin: 0 auto 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+}
+
+/* Yellow Box Header */
+.yellowBoxHeader {
+  font-size: 2rem;
+  color: #456990;
+  text-align: center;
+  font-family: 'Glacial Indifference', sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+/* Yellow Box Text (Centered Paragraphs) */
+.yellowBoxText {
+  font-size: 1.2rem;
+  color: #000000;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 2rem;
+  margin-bottom: 1.5rem; /* Space between paragraphs */
+  font-family: 'Glacial Indifference', sans-serif;
+}
+
+/* Inline underlined text class for "My Approach" */
+.inlineUnderlineText {
+  font-weight: bold;
+  display: inline;
+  text-decoration: underline;
+}
+
+/* Blue Box Styling */
+.blueBoxContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #456990; /* Blue color */
+  width: 80%; /* 80% of the yellow box section */
+  max-width: 600px;
+  margin: 30px auto; /* Centers the box with space above and below */
+  padding:  20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.blueBoxContainerRates {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #456990; /* Blue color */
+  width: 60%; /* 80% of the yellow box section */
+  max-width: 500px;
+  margin: 30px auto; /* Centers the box with space above and below */
+  padding:  20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.blueBoxText {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 600px;
+  font-family: 'Glacial Indifference', sans-serif;
+}
+
+/* Market Comparison */
+.marketComparison {
+  width: 100%;
+  padding: 0 2rem; /* Padding for left and right alignment */
+  text-align: left;
+}
+
+.marketComparisonHeader {
+  font-size: .9rem;
+  font-weight: bold;
+  color: #000000;
+  font-family: 'League Spartan', sans-serif;
+  margin-bottom: 5px;
+}
+
+.marketComparisonText {
+  font-size: .8rem;
+  color: #000000;
+  line-height: 1.4;
+  font-family: 'Glacial Indifference', sans-serif;
+}
+
+.marketComparisonList {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
+.marketComparisonList li {
+  font-size: .7rem;
+  color: #000000;
+  font-family: 'Glacial Indifference', sans-serif;
+}
+
+.boldUnderlineText {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.ratesHeader {
+  font-size: 1.2rem; /* Smaller than the previous 2rem size */
+  color: white;
+  text-align: center;
+  font-family: 'Poppins Bold', sans-serif;
+  line-height: 1 !important; /* Reduce line height to minimize space */
+}
+
+/* Container for the Rates content */
+.ratesContent {
+  text-align: left; /* Align the content to the left instead of center */
+  margin-top: 0 !important; /* Remove any margin on top */
+  padding-top: 0 !important; /* Remove any padding above the content */
+}
+
+/* Rates Container to layout the two sections side by side */
+.ratesContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px; /* Adds a small gap between the individual and group session sections */
+  margin-top: 20px;
+}
+
+/* Each Rates Section (Individual or Group) */
+.ratesSection {
+  width: 45%; /* Ensures both sections are side by side with a gap */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the header */
+  margin-top: -10;
+}
+
+/* Sub Header for each section (Individual and Group) */
+.ratesSubHeader {
+  font-size: 1rem; /* Smaller font size for subheaders */
+  color: white;
+  font-weight: bold;
+  margin-top: 0; /* Remove any space above the subheader */
+  margin-bottom: 10px; /* Keep the bottom margin as needed */
+  text-align: center; /* Center-align the header */
+  font-family: 'Poppins Bold', sans-serif;
+}
+
+/* Left Circle - Positioned to the left of the Blue Box */
+.leftCircle {
+  position: absolute;
+  right: -240px;
+  bottom: -300px;
+  z-index: 1; /* Ensure it's above the About Me section */
+}
+
+/* Right Circle - Positioned to the right of the Blue Box */
+.rightCircle {
+  position: absolute;
+  left: -50px;
+  bottom: -120px;
+  z-index: 1; /* Ensure it's above the About Me section */
+}
+
+/* List for rates */
+.ratesList {
+  list-style-type: disc;
+  margin-left: 20px; /* Indentation for the list */
+  color: white;
+  text-align: left; /* Left-align the list items */
+  font-family: 'Glacial Indifference', sans-serif;
+}
+
+.ratesList li {
+  font-size: .9rem; /* Keeps the font size consistent with the list items */
+  color: white;
+}
+
+/* For screens smaller than 475px */
+@media (max-width: 475px) {
+
+  /* Blue Box Styling */
+  .blueBoxContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #456990; /* Blue color */
+    width: 80%; /* 80% of the yellow box section */
+    max-width: 600px;
+    margin: 10px auto; /* Centers the box with space above and below */
+    padding:  20px;
+    border-radius: 8px;
+    position: relative;
+  }
+
+  .blueBoxContainerRates {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #456990; /* Blue color */
+    width: 80%; /* 80% of the yellow box section */
+    max-width: 500px;
+    margin: 30px auto; /* Centers the box with space above and below */
+    padding:  20px;
+    border-radius: 8px;
+    position: relative;
+  }
+
+  /* My Approach Subheader */
+  .myApproachHeader {
+    font-size: 1.5rem;
+    color: #456990;
+    text-align: left; /* Left-align the subheader */
+    font-family: 'Glacial Indifference', sans-serif;
+    margin-bottom: 1rem;
+  }
+
+  .boldUnderlineText {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .boldUnderlineText {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}

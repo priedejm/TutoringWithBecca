@@ -1,12 +1,13 @@
+/* Global Styles */
 #__next-prerender-indicator {
   display: none !important;
 }
 
 html, body {
+  position: relative;
+  width: calc(100vw + 4px);
   overflow-x: hidden;
-  width: 100%;
-  margin: 0;
-  padding-right: 100;
+  scroll-behavior: smooth; /* This will enable smooth scrolling */
 }
 
 * {
@@ -19,3 +20,42 @@ html, body {
   width: 100%;
   overflow-x: hidden;
 }
+
+/* Fonts */
+@font-face {
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 400; 
+  src: url('/fonts/league-spartan/variable/LeagueSpartan-Regular.woff2') format('woff2'),
+       url('/fonts/league-spartan/variable/LeagueSpartan-Regular.woff') format('woff'),
+       url('/fonts/league-spartan/variable/LeagueSpartan-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'League Spartan Light';
+  font-style: normal;
+  font-weight: 400; 
+  src: url('/fonts/league-spartan-light/variable/LeagueSpartan-Regular.woff2') format('woff2'),
+       url('/fonts/league-spartan-light/variable/LeagueSpartan-Regular.woff') format('woff'),
+       url('/fonts/league-spartan-light/variable/LeagueSpartan-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Glacial Indifference';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/glacial-indifference/GlacialIndifference-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  src: url('/fonts/poppins/poppins.light.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Poppins Bold';
+  font-style: normal;
+  src: url('/fonts/poppins/poppins.Bold.ttf') format('opentype');
+}
+

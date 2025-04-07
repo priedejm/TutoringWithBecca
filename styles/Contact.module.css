@@ -1,0 +1,194 @@
+/* Yellow Box Container (Contact) */
+.yellowBoxContainer {
+  background-color: rgb(254, 242, 173); /* FDEB87 with 29% opacity */
+  max-width: 800px;
+  width: 90%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 20px;
+  border-radius: 30px;
+  margin: 0 auto 30px auto; /* Reduced margin-top to bring it closer to the blue box */
+  overflow: hidden;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: -25px;
+  position: relative;
+}
+
+/* Yellow Box Header */
+.yellowBoxHeader {
+  font-size: 2rem;
+  color: #456990;
+  text-align: center;
+  font-family: 'Glacial Indifference', sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+/* Yellow Box Text (Centered Paragraphs) */
+.yellowBoxText {
+  font-size: 1.2rem;
+  color: #000000;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 2rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Glacial Indifference', sans-serif;
+}
+
+/* Blue Box Container */
+.blueBoxContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #456990;
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto; /* Reduced margin for a closer distance */
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+/* Blue Box Text */
+.blueBoxText {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 600px;
+  font-family: 'Glacial Indifference', sans-serif;
+}
+
+/* Contact Content */
+.ratesContent {
+  text-align: left;
+  width: 100%;
+}
+
+/* Blue Box Header (Centered and White) */
+.blueBoxHeader {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: 'Glacial Indifference', sans-serif;
+}
+
+/* Rates Container to layout the two sections side by side */
+.ratesContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px; /* Adds a small gap between the WhatsApp and Email sections */
+  margin-top: 20px;
+}
+
+/* Each Rates Section (WhatsApp or Email) */
+.ratesSection {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the header */
+  background-color: #456990; /* Blue Box Background */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Sub Header for each section (WhatsApp and Email) */
+.ratesSubHeader {
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Glacial Indifference', sans-serif;
+}
+
+/* List for contact options */
+.ratesList {
+  list-style-type: none;
+  margin-left: 0;
+  color: white;
+  text-align: center; /* Center-align the list items */
+}
+
+.ratesList li {
+  font-size: 1rem;
+}
+
+.contactLink {
+  font-size: 1.1rem;
+  color: white;
+  text-decoration: none;
+  font-family: 'Glacial Indifference', sans-serif;
+}
+
+.contactLink:hover {
+  text-decoration: underline;
+}
+
+/* Left Circle - Positioned to the left of the Blue Box */
+.leftCircle {
+  position: absolute;
+  left: -200px;
+  z-index: 1; /* Ensure it's above the About Me section */
+}
+
+/* Right Circle - Positioned to the right of the Blue Box */
+.rightCircle {
+  position: absolute;
+  z-index: 1; /* Ensure it's above the About Me section */
+}
+
+/* For screens smaller than 475px */
+@media (max-width: 475px) {
+  /* Make the ratesContainer stack vertically instead of horizontally */
+  .ratesContainer {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+    width: 100%;
+    gap: 5px; /* Reduce space between sections */
+  }
+
+  /* Ensure each ratesSection takes full width on mobile */
+  .ratesSection {
+    width: 100%; /* Full width on small screens */
+    margin: 0; /* Remove extra margin */
+    padding: 10px; /* Reduced padding for tighter layout */
+  }
+
+  /* Make the headers a bit smaller for mobile */
+  .ratesSubHeader {
+    font-size: 1.1rem; /* Adjust font size for mobile */
+    margin-bottom: 5px; /* Reduce bottom margin for tighter spacing */
+  }
+
+  /* Blue Box Header can also be adjusted for mobile */
+  .blueBoxHeader {
+    font-size: 1.4rem; /* Adjust font size for mobile */
+    margin-bottom: -5px; /* Reduce space below header */
+  }
+
+  /* Adjust padding and spacing in the blueBoxContainer */
+  .blueBoxContainer {
+    padding: 10px; /* Less padding for mobile */
+    margin: 20px; /* Remove any default margin */
+  }
+
+  /* Yellow Box Text (Centered Paragraphs) */
+  .yellowBoxText {
+    font-size: 1.2rem;
+    color: #000000;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 2rem;
+    font-family: 'Glacial Indifference', sans-serif;
+  }
+}

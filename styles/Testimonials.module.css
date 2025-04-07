@@ -1,0 +1,71 @@
+/* Yellow Box Container (Similar to About Me) */
+.yellowBoxContainer {
+  background-color: rgb(254, 242, 173); /* FDEB87 with 29% opacity */
+  max-width: 800px;
+  width: 90%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 20px;
+  border-radius: 30px;
+  margin: 0 auto 0 auto;
+  overflow: hidden;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Yellow Box Header */
+.yellowBoxHeader {
+  font-size: 2rem;
+  color: #456990;
+  text-align: center;
+  font-family: 'Glacial Indifference', sans-serif;
+  margin-bottom: 1rem;
+}
+
+/* Yellow Box Text (Centered Paragraphs) */
+.yellowBoxText {
+  font-size: 1.2rem;
+  color: #000000;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 2rem;
+  margin-bottom: 1.5rem; /* Space between paragraphs */
+  font-family: 'Glacial Indifference', sans-serif;
+}
+
+/* Blue Box Styling (Each Testimonial) */
+.blueBoxContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #456990; /* Blue color */
+  width: 80%; /* 80% of the yellow box section */
+  max-width: 600px;
+  margin: 20px auto; /* Centers the box with space above and below */
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.testimonialHeader {
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+  font-family: 'Poppins Bold', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.blueBoxText {
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 600px;
+  font-family: 'Glacial Indifference', sans-serif;
+}
+

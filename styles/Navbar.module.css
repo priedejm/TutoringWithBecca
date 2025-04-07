@@ -7,85 +7,244 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #456990;
-  padding: 1rem 0;
+  background: #FDEB87; /* Updated background color */
+  padding: 3rem 0;
   color: white;
   z-index: 1000; /* Ensures it stays above other content */
 }
 
+/* Top Corners */
+.topCorners {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Space out left and right corners */
+  padding: 0 1rem; /* Add some space on the sides */
+  z-index: 999; /* Ensure these icons stay above content */
+}
+
+.topLeft, .topRight {
+  position: relative; /* Make them relative for clipping */
+  width: 200px; /* Set a width for the visible portion */
+  height: 200px; /* Set a height for the visible portion */
+  overflow: hidden; /* Hide any part of the circle outside of the container */
+}
+
+.topLeft {
+  left: 0px; /* Move the circle off-screen to show only part of it */
+  top: 50px; /* Adjust vertical positioning to expose parts of the circle */
+  transform: rotate(180deg); /* Rotate the circle by -90 degrees */
+}
+
+.topRight {
+  right: -100px; /* Move the circle off-screen to show only part of it */
+  top: -100px; /* Adjust vertical positioning to expose parts of the circle */
+  transform: rotate(-90deg); /* Rotate the circle by -90 degrees */
+}
+
+/* Image styling to ensure the circle takes full width/height of its container */
+.topLeft img {
+  width: 300px; /* Width of the full circle image */
+  height: 300px; /* Height of the full circle image */
+  object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
+}
+
+.topRight img {
+  width: 300px; /* Width of the full circle image */
+  height: 300px; /* Height of the full circle image */
+  object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
+  transform: rotate(90deg); /* Rotate the circle by -90 degrees */
+}
+
+
+/* Logo and navigation styles remain unchanged */
+.logoContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
 .logo {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  color: white;
+  margin-bottom: 0.2rem;
+  color: #456990;
   text-decoration: none;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.logoLink {
+  text-decoration: none; /* Remove underline */
+}
+
+.subtext {
+  position: absolute;
+  bottom: -0.7rem;
+  right: -10px;
+  font-size: 1.2rem;
+  color: #456990;
+  margin: 0;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
 }
 
 .navLinks {
   display: flex;
-  gap: 2rem;
   justify-content: center;
   list-style: none;
-  padding: 0;
+  font-family: 'League Spartan Light', sans-serif;
+  margin-top: auto; /* Pushes the nav links towards the bottom */
+  margin-bottom: -2rem; /* Adjusts the position to be just off the bottom */
+}
+
+.navLinks li {
+  display: inline;
+}.navbar {
+  position: fixed; /* Keeps navbar visible while scrolling */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #FDEB87; /* Updated background color */
+  padding: 3rem 0;
+  color: white;
+  z-index: 1000; /* Ensures it stays above other content */
+}
+
+.topCorners {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Space out left and right corners */
+  padding: 0 1rem; /* Add some space on the sides */
+  z-index: 999; /* Ensure these icons stay above content */
+}
+
+.topLeft,
+.topRight {
+  position: absolute;
+}
+
+.topLeft {
+  left: -100px; /* Move the circle off-screen to show only part of it */
+  top: -10px; /* Adjust vertical positioning to expose parts of the circle */
+  transform: rotate(180deg); /* Rotate the circle by -90 degrees */
+  pointer-events: none; /* Allow clicks to pass through the circle */
+}
+
+.topRight {
+  right: -100px; /* Move the circle off-screen to show only part of it */
+  top: -100px; /* Adjust vertical positioning to expose parts of the circle */
+}
+
+/* Logo and navigation styles remain unchanged */
+.logoContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+  color: #456990;
+  text-decoration: none;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.logoLink {
+  text-decoration: none; /* Remove underline */
+}
+
+.subtext {
+  position: absolute;
+  bottom: -0.7rem;
+  right: -10px;
+  font-size: 1.2rem;
+  color: #456990;
+  margin: 0;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  font-family: 'League Spartan Light', sans-serif;
+  margin-top: auto; /* Pushes the nav links towards the bottom */
+  margin-bottom: -2.5rem; /* Adjusts the position to be just off the bottom */
 }
 
 .navLinks li {
   display: inline;
 }
-
 .navLinks a {
-  color: white;
+  color: #456990;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background 0.3s ease;
+  font-size: 1rem;
+  padding: 0.5rem 3.5rem; /* Vertical and horizontal padding */
+  position: relative; /* Required for positioning the pseudo-element */
+  display: inline-block; /* Ensures the width is based on the text plus padding */
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Ensures padding is included in element height */
 }
 
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  left: 50%; /* Center the pseudo-element horizontally */
+  bottom: 0;
+  width: 45%; /* Fixed width for the underline */
+  height: 2px;
+  background-color: #456990;
+  transform: translateX(-50%) scaleX(0); /* Center and hide initially */
+  transition: transform 0.3s ease;
+}
+
+/* On hover or focus, the underline will appear */
 .navLinks a:hover,
-.navLinks a.active {
-  background: #FDE872;
-  color: #000;.navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #456990;
-    padding: 1rem 0;
-    color: white;
-    width: 100vw; /* Ensures full width */
-  }
-  
-  .navLinks {
-    display: flex;
-    justify-content: space-around; /* Distributes tabs evenly */
-    width: 100%; /* Makes the nav span the entire width */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background: #FDEB87; /* Background color spans full width */
-  }
-  
-  .navLinks li {
-    flex: 1; /* Makes each tab take up equal space */
-    text-align: center;
-  }
-  
+.navLinks a:focus {
+  padding-bottom: 0.2rem; /* Adjust padding on hover for balance */
+}
+
+.navLinks a:hover::after,
+.navLinks a:focus::after {
+  transform: translateX(-50%) scaleX(1); /* Show and center the underline when hovered */
+}
+
+/* When a link is clicked, apply the permanent underline */
+.navLinks a.active::after {
+  transform: translateX(-50%) scaleX(1); /* Permanently show the underline */
+}
+
+
+/* For screens smaller than 475px */
+@media (max-width: 475px) {
   .navLinks a {
-    display: block;
-    padding: 1rem 0;
-    color: white;
+    color: #456990;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.2rem;
-    transition: background 0.3s ease;
-  }
-  
-  .navLinks a:hover,
-  .navLinks a.active {
-    background: #FDE872;
-    color: #000;
+    font-size: .8rem;
+    padding: 0.5rem .7rem; /* Vertical and horizontal padding */
+    position: relative; /* Required for positioning the pseudo-element */
+    display: inline-block; /* Ensures the width is based on the text plus padding */
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Ensures padding is included in element height */
   }
 }

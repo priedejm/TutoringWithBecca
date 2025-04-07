@@ -1,139 +1,232 @@
-html, body {
-  position: relative;
-  left: -4px;
-  width: calc(100vw + 4px);
-  overflow-x: hidden;
-}
 /* Main Container */
 .homeContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 100vh; /* Ensures full viewport height */
-  width: 100vw; /* Ensures full viewport width */
-  background-color: #FDEB87; /* Yellow background */
-  overflow: hidden;
-  padding-top: 15rem; /* Moves the hero section higher up */
+  min-height: calc(100vh - 10rem); /* Subtract navbar height from the viewport height */
+  width: 100vw;
+  background-color: white;
+  overflow: hidden; /* Prevent scrolling on the home container */
+  position: relative; /* Make sure positioning is relative to this container */
 }
 
-/* Hero Section */
-.heroSection {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 800px;
-  width: 80%;
-  background: #456990;
-  color: white;
-  padding: 3rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Creates space below hero section */
-.heroSection + .testimonialsSection {
-  margin-top: 10rem; /* Adds space between hero and testimonials */
-}
-
-.textContainer {
-  flex: 1;
-}
-
-.textContainer h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.textContainer p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.ctaButton {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: #FDE872;
-  color: #000;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-}
-
-.ctaButton:hover {
-  background: #FFD700;
-}
-
-.imageContainer {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.profilePic {
-  border-radius: 50%;
-  border: 5px solid white;
-}
-.flagIcon {
-  width: 30px;
-  height: auto;
-}
-
-/* Testimonials Section */
-.testimonialsSection {
+.whiteStrip {
   width: 100%;
-  overflow: hidden;
-  background-color: #456990;
-  padding: 2rem 0;
+  background-color: white;
+  padding: 6rem 0;
+  padding-top: 4rem; /* Added padding-top for space below navbar */
   position: relative;
-  white-space: nowrap;
+  z-index: 1;
 }
 
-.testimonialHeader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem; /* Space between name & flag */
+.whiteStripContent {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+  position: relative; /* Ensure it can contain absolutely positioned elements */
 }
 
-/* Scrolling Container */
-.scrollingContainer {
-  display: flex;
-  width: 200%; /* Makes sure there's enough space for smooth looping */
-  animation: scrollLeft 30s linear infinite; /* Continuous smooth scrolling */
+.whiteStripHeaders {
+  position: relative; /* This will make it the positioning context for the absolute element */
+  display: inline-block; /* Makes the header container fit only the width of its children */
 }
 
-/* Each testimonial track contains double the testimonials */
-.testimonialTrack {
-  display: flex;
-  gap: 2rem;
+.whiteStrip h2 {
+  font-size: 2rem;
+  color: #456990;
+
+  font-family: 'Glacial Indifference', sans-serif;
+  font-weight: 400;
+  display: inline-block; /* Ensures it only takes up the space it needs */
+  width: auto;
 }
 
-.testimonialCard {
-  width: 300px; /* Fixed width for uniformity */
-  min-height: 180px; /* Ensures all cards have the same height */
-  background: #FDE872;
-  padding: 1rem;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
-  font-size: 1rem;
-  color: #000;
+.whiteStrip p {
+  font-size: 1.2rem;
+  color: #000000;
+  font-family: 'Glacial Indifference', sans-serif;
+  line-height: 1.6;
+}
+
+.whiteStrip h2 + .subtext {
+  font-size: 1.2rem;
+  color: #456990;
+  font-family: 'Glacial Indifference', sans-serif;
+  display: inline-block;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.aboutMeContainer {
+  position: relative; /* Add this to ensure circles are positioned correctly */
+  background-color: rgba(253, 241, 170, 255);
+  max-width: 800px;
+  width: 90%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  word-wrap: break-word;
-  overflow: hidden;
-  white-space: normal; /* Allows text to wrap */
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 20px;
+  border-radius: 30px;
+  margin: 0 auto 0 auto;
+  overflow: visible;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-/* Smooth infinite scrolling */
-@keyframes scrollLeft {
-  from {
-    transform: translateX(0);
+/* Optional: If you want the content inside the About Me section to scroll when it overflows */
+.aboutMeContent {
+  overflow-y: auto; /* Allows vertical scrolling if content exceeds max-width */
+  max-height: calc(100% - 50px); /* Account for padding-top */
+}
+
+/* About Me Header */
+.aboutMeHeader {
+  font-size: 2rem;
+  color: #456990;
+  text-align: center;
+  margin-bottom: 1.5rem; /* Reduced space below the header */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Profile Picture */
+.profilePic {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  float: left; /* Makes the image float to the left, allowing text to wrap around */
+  margin-right: 20px; /* Adds space between the image and the text */
+  margin-bottom: 20px; /* Ensures there's some space below the image */
+}
+
+/* About Me Text */
+.aboutMeText {
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.6;
+  text-align: justify;
+  max-width: 800px;
+  padding: 20px 3rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* Left Circle - Positioned to the left of the Blue Box */
+.leftCircle {
+  position: absolute;
+  left: -300px; /* Adjust for positioning on the left */
+  bottom: -250px; /* Position on top of the About Me section */
+  z-index: 1; /* Ensure it's above the About Me section */
+}
+
+/* Right Circle - Positioned to the right of the Blue Box */
+.rightCircle {
+  position: absolute;
+  right: -75px; /* Adjust for positioning on the left */
+  bottom: -270px; /* Position on top of the About Me section */
+  z-index: 1; /* Ensure it's above the About Me section */
+}
+
+/* Blue Box Styles */
+.blueBoxContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #456990; /* Blue color */
+  width: 80%; /* 80% of the About me section */
+  max-width: 675px;
+  margin: 40px auto; /* Centers the box with space above and below */
+  padding: 40px 20px;
+  border-radius: 8px;
+  position: relative; /* Position relative to make sure circles can be placed on top */
+  margin-bottom: -40px;
+  z-index: 999;
+}
+
+.blueBoxText {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 600px; /* Optional to limit text width */
+}
+
+.sarahText {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-style: italic;
+  font-size: 16px;
+}
+
+/* Footer Styles */
+.footer {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #456990; /* Adjust the color as needed */
+  padding: 10px 0;
+  border-top: 2px solid #ddd; /* Light border at the top */
+  position: relative;
+  bottom: 0;
+  margin-top: 20px; /* Adjust this if you want more or less space between footer and content */
+}
+.text-wrap-container {
+  display: flex;
+  align-items: flex-start;
+  max-width: 600px; /* Adjust width as needed */
+  margin: auto;
+  line-height: 1.6;
+}
+
+.wrapped-image {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.text-wrap-container p {
+  text-align: justify;
+  flex: 1;
+}
+
+
+/* For screens smaller than 475px */
+@media (max-width: 475px) {
+  .aboutMeContainer {
+    padding-top: 20px; /* Less top padding for smaller screens */
   }
-  to {
-    transform: translateX(-50%); /* Moves exactly half the duplicated content */
+
+  /* About Me Content */
+  .aboutMeContent {
+    display: flex;
+    flex-direction: column;  /* Stack the elements vertically */
+    justify-content: center;  /* Center the content vertically */
+    align-items: center;  /* Center the content horizontally */
+    text-align: center;  /* Center the text */
+    padding: 0 1rem;  /* Add some padding for smaller screens */
   }
+
+  /* Profile Picture */
+  .profilePic {
+    width: 150px; /* Smaller profile pic */
+    height: 150px;
+    margin: 10px 0; /* Add some margin around the image */
+  }
+
+  /* About Me Text */
+  .aboutMeText {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center; /* Center text */
+    padding: 0 1rem; /* Add some padding to text */
+    font-family: 'Poppins', sans-serif;
+  }
+
 }
